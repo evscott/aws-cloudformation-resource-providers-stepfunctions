@@ -201,7 +201,8 @@
   "writeOnlyProperties": [
     "/properties/Definition",
     "/properties/DefinitionS3Location",
-    "/properties/DefinitionSubstitutions"
+    "/properties/DefinitionSubstitutions",
+    "/properties/LoggingConfiguration"
   ],
   "primaryIdentifier": [
     "/properties/Arn"

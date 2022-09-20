@@ -1,0 +1,27 @@
+Resources:
+  ContractTestStateMachineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - !Sub states.${AWS::Region}.amazonaws.com
+            Action: "sts:AssumeRole"
+      Path: "/"
+
+Outputs:
+  StateMachineExecutionRole:
+    Value: !GetAtt ContractTestStateMachineRole.Arn
+    Export:
+      Name: awsstepfunctionsstatemachinecto1
+  ContractTestStateMachineName:
+    Value: ContractTestStateMachine
+    Export:
+      Name: awsstepfunctionsstatemachinecto2
+  ContractTestInvalidStateMachineName:
+    Value: ThisStateMachineDoesNotExist
+    Export:
+      Name: awsstepfunctionsstatemachinecto3
